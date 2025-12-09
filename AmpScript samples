@@ -1,9 +1,6 @@
 -----Subject line personalization----- 
 %%[
-var @Incentive, @SweepstakesAmount, @SinglePersonHH, @FirstName
-set @Incentive = AttributeValue("Incentive")
-set @SweepstakesAmount = AttributeValue("SweepstakesAmount")
-set @SinglePersonHH = AttributeValue("SinglePersonHH")
+var @FirstName
 set @FirstName = AttributeValue("FirstName")
 ]%%
 
