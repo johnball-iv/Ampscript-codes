@@ -1,0 +1,15 @@
+<script runat="server">
+Platform.Load("Core","1");
+
+var api = new Script.Util.WSProxy();
+var deName = "UserStatus";
+var record = {
+    "SubscriberKey": _subscriberKey,
+    "LastLogin": Now(),
+    "Status": "Active"
+};
+
+var result = api.updateItem("DataExtensionObject[" + deName + "]", record);
+
+Write("<!-- WSProxy Update Status: " + result.Status + " -->");
+</script>
