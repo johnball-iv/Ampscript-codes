@@ -1,4 +1,7 @@
------Subject line personalization----- 
+/* Use Case: Personalize subject line with subscribers name */
+/* What it does: adds a personal touch to the email and grabs their attention */
+/* Key Concepts: Pulling data from DE, concatenation */
+
 %%[
 var @FirstName
 set @FirstName = AttributeValue("FirstName")
@@ -14,7 +17,11 @@ ENDIF
 
 %%=v(@Subject)=%%
 
------ LOOKUP PRODUCT RECOMMENDATIONS----- 
+
+
+/* Use Case: show pproduct recommendations  */
+/* What it does: pulls 4 product recommendations from a DE. If there are no personalized products, it will show regular products */
+/* Key Concepts: LookupOrderedRows, row iteration */
 
 SET @products = LookupOrderedRows("Product_Recommendations_DE", 4, "Priority ASC", 
                                   "SubscriberKey", @subscriberKey)
